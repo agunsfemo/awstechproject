@@ -17,9 +17,30 @@
             background-color: #4CAF50;  
             padding: 20px;  
             text-align: center;  
-            color: white;  
+            color: rgb(12, 0, 0);  
         }  
-
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .header a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
         nav {  
             margin: 20px 0;  
         }  
@@ -27,7 +48,7 @@
         nav a {  
             margin: 15px;  
             text-decoration: none;  
-            color: #4CAF50;  
+            color: white;  
         }  
 
         section {  
@@ -46,17 +67,20 @@
     </style>  
 </head>  
 <body>  
-
-<header>  
-    <h1>Rising Praise Generals</h1>  
-    <nav>  
-        <a href="#about">About</a>  
-        <a href="#music">Music</a>  
-        <a href="#tour">Tour Dates</a>  
-        <a href="#contact">Contact</a>  
-    </nav>  
-</header>
-<h1>Welcome to our Web Page</h1>
+    <div class="header">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/services">Services</a>
+        <a href="RGbookingdev.html">Book Your Band</a>
+    </div>
+    <header>  
+        <div class="container">
+            <h2>Welcome to Rising Praise General (RPG) Entertainment Website</h2>
+            <p>Explore our services and book our band for your next event!</p>
+            <p><a href="RGbookingdev.html" style="color: #28a745; font-weight: bold;">Click here to book your band!</a></p>
+        </div>
+    </header>
+<h2>Welcome to our exciting world of elevating praise moments</h2>
 <img src="F:/Background pics/DSC_7062 edited.jpg" alt="Description of the image" width="800" height="400">
 
 <section id="about">  

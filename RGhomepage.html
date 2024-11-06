@@ -41,6 +41,41 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+	.center-text {
+            text-align: center; /* Horizontally center the text */
+        }
+	.carousel-container {
+            max-width: 600px;
+            margin: auto;
+            position: relative;
+        }
+        .carousel-images img {
+            display: none;
+            width: 100%;
+        }
+        .carousel-images img.active {
+            display: block;
+        }
+        /* Buttons to navigate images */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            background-color: rgba(0,0,0,0.5);
+            border: none;
+            border-radius: 5px;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+	
         nav {  
             margin: 20px 0;  
         }  
@@ -67,6 +102,7 @@
     </style>  
 </head>  
 <body>  
+    
     <div class="header">
         <a href="RGhomepage.html">Home</a>
         <a href="/about">About Us</a>
@@ -80,8 +116,22 @@
             <p><a href="RGbookingdev.html" style="color: #28a745; font-weight: bold;">Click here to book your band!</a></p>
         </div>
     </header>
-<h2>Welcome to our exciting world of elevating praise moments</h2>
-<img src="F:/Background pics/DSC_7062 edited.jpg" alt="Description of the image" width="800" height="400">
+    
+    <div class="center-text">
+        <h3>Welcome to our exciting world of entertainment moments</h3>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel-images">
+            <img src="DSC_7062 edited.jpg" class="active" alt="Image 1">
+            <img src="IMG_0763.jpeg" alt="Image 2">
+        </div>
+        <!-- Navigation Buttons -->
+	
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <button class="next" onclick="nextImage()">&#10095;</button>
+    </div>
+
 
 <section id="about">  
     <h2>About Us</h2>  
@@ -106,14 +156,44 @@
     </ul>  
 </section>  
 
+<div class="center-text">
 <section id="contact">  
-    <h2>Contact Us</h2>  
-    <p>For bookings and inquiries, please email us at contact@risingpraisegenerals.com</p>  
-</section>  
+    <h4>Contact Us today</h4> 
+    <p>For bookings and inquiries, please email us at <a href="mailto:contact@rp-general.com">contact@rp-general.com</a>    |    
+    Phone: <a href="tel:+14109071189">+1 (410) 907-1189</a>    |     
+    Website: <a href="https://rp-general.com" target="_blank">rp-general.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/rising_praise_generals" target="_blank">@rising_praise_generals</a></p>
+    <p>dhcy</p>s
+</section>
+</div>
+  
     
 <footer>  
     <p>&copy; 2024 Rising Praise Generals</p>  
 </footer>  
 
+<script>
+    // JavaScript to switch between images
+    setInterval(nextImage, 4000); // Automatically change images every 3 seconds
+    let currentImageIndex = 0;
+    const images = document.querySelectorAll('.carousel-images img');
+    
+    function showImage(index) {
+        // Hide all images
+        images.forEach(img => img.classList.remove('active'));
+        // Show the current image
+        images[index].classList.add('active');
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        showImage(currentImageIndex);
+    }
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        showImage(currentImageIndex);
+    }
+</script>
 </body>  
 </html>  
